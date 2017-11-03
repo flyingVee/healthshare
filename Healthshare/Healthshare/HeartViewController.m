@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.webView loadHTMLString:@"<title>Canvas</title>" baseURL:nil];
+    
+    NSURLRequest* localHtml = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"data/test" ofType:@"html"]isDirectory:NO]];
+    [self.webView loadRequest:localHtml];
 }
 
 - (void)didReceiveMemoryWarning {
