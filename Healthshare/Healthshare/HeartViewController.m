@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSURLRequest* localHtml = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"data/test" ofType:@"html"]isDirectory:NO]];
+    NSURLRequest* localHtml = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"data/heartsimulation-master/src/index" ofType:@"html"]isDirectory:NO]];
     [self.webView loadRequest:localHtml];
 }
 

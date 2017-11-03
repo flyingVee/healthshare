@@ -1,0 +1,159 @@
+html {overflow:-moz-scrollbars-vertical !important;}
+
+/* Body */
+	body {
+		background: #F5F4EF; /*url('../images/bg.png')*/
+		color: #000305;
+		font-size: 14px; 
+		font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		line-height: 1.429;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+	}
+
+
+	
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/**
+*
+* Clear any float elements
+*
+*/
+.clear {clear: both;}
+
+/**
+*
+* context of graphic analysis
+*
+*/
+ #graphics-context {
+	background: #eee;
+	width:auto;
+	height:40px;
+	line-height:20px;
+	padding:20px;
+	margin-left:40px;
+ }
+
+/**
+*
+* context of graphic analysis
+*
+*/
+ #startdiv {
+	width:auto;
+	margin-left:40px;
+	margin-bottom:10px;
+ }
+ 
+ /**
+*
+* stroke selection
+*
+*/
+ #swim-context {
+	display:inline-block;
+	font-size: 1.2em;
+}
+
+ /**
+*
+* Analysis selection
+*
+*/
+ #analysis-selection {
+	display:inline-block;
+	font-size: 1.2em;
+}
+
+/**
+*
+* start graphics analysis
+*
+*/
+ #startSwimline {
+	display:inline-block;
+	background: none repeat scroll 0 0 #090;
+	border-radius: 3px;
+	color: #fff;
+	line-height: 30px;
+	outline: medium none;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 #000;
+	width: 140px;
+	
+}
+
+/**
+*
+* reset button
+*
+*/
+ #restart-analysis {
+	display:inline-block;
+	background: none repeat scroll 0 0 #c00;
+	border-radius: 3px;
+	color: #fff;
+	line-height: 30px;
+	outline: medium none;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 #000;
+	width: 85px;
+		
+}
+
+/**
+*
+* stopwatch timer live
+*
+*/
+ #stop-watch {
+	display:inline-block;
+	font-size: 1.5em;
+}
+/**
+*
+* video button
+*
+*/
+ #video-mode {
+	display:inline-block;
+	background: none repeat scroll 0 0 #3366FF;
+	border-radius: 3px;
+	color: #fff;
+	line-height: 30px;
+	outline: medium none;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 #000;
+	width: 85px;
+	margin-left:40px;	
+}
+
+/**
+*
+* future simulation button
+*
+*/
+ #future-simulation {
+	display:inline-block;
+	background: none repeat scroll 0 0 #CC6600;
+	border-radius: 3px;
+	color: #fff;
+	line-height: 30px;
+	outline: medium none;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 #000;
+	width: 140px;
+	margin-left:80px;
+		
+}

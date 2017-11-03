@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Human Heart Simulation - HeartShare</title>
+
+	<link rel="stylesheet" type="text/css" href="css/graphicstyle.css" media="all" />
+
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="hrcanvas.js"></script>
+	<script type="text/javascript" >
+/**
+*  jQuery listen for clicks and interaction
+*
+*/
+$(document).ready(function(){
+
+	var StartselfSpace = new heartSimulation();
+
+
+	$("#startHeart").click(function(e) {
+		e.preventDefault(e);
+
+	});
+
+
+});
+</script>
+</head>
+<body>
+	<section id="heart-context">
+		<header>
+		 <b>Heart</b>
+		</header>
+	</section>
+
+	<canvas id="canvasOne" class="style" width="1200" height="400"></canvas>
+
+
+</body>
+
+</html>
