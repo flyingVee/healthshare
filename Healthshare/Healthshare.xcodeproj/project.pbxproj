@@ -23,6 +23,7 @@
 		01D8D98A1FACB18200DDD222 /* HeartShareDataSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9891FACB18200DDD222 /* HeartShareDataSetTests.m */; };
 		01D8D98D1FACB33E00DDD222 /* HeartRateDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D98C1FACB33E00DDD222 /* HeartRateDataSet.m */; };
 		01D8D98E1FACB33E00DDD222 /* HeartRateDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D98C1FACB33E00DDD222 /* HeartRateDataSet.m */; };
+		01D8D9901FACBC8000DDD222 /* RequestHeartRateDataSetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D98F1FACBC8000DDD222 /* RequestHeartRateDataSetTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		01D8D9891FACB18200DDD222 /* HeartShareDataSetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartShareDataSetTests.m; sourceTree = "<group>"; };
 		01D8D98B1FACB33E00DDD222 /* HeartRateDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartRateDataSet.h; sourceTree = "<group>"; };
 		01D8D98C1FACB33E00DDD222 /* HeartRateDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartRateDataSet.m; sourceTree = "<group>"; };
+		01D8D98F1FACBC8000DDD222 /* RequestHeartRateDataSetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestHeartRateDataSetTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				01D8D9821FAC9CA100DDD222 /* HeartRateDataTests.m */,
 				01D8D95E1FAC79B600DDD222 /* HealthshareTests.m */,
 				01D8D9601FAC79B600DDD222 /* Info.plist */,
+				01D8D98F1FACBC8000DDD222 /* RequestHeartRateDataSetTests.m */,
 			);
 			path = HealthshareTests;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D8D9831FAC9CA100DDD222 /* HeartRateDataTests.m in Sources */,
+				01D8D9901FACBC8000DDD222 /* RequestHeartRateDataSetTests.m in Sources */,
 				01D8D9881FAC9DFE00DDD222 /* HeartRateData.m in Sources */,
 				01D8D95F1FAC79B600DDD222 /* HealthshareTests.m in Sources */,
 				01D8D98A1FACB18200DDD222 /* HeartShareDataSetTests.m in Sources */,
