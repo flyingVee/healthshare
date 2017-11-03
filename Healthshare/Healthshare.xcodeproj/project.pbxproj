@@ -17,6 +17,9 @@
 		01D8D96A1FAC79B600DDD222 /* HealthshareUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9691FAC79B600DDD222 /* HealthshareUITests.m */; };
 		01D8D97C1FAC82C100DDD222 /* HeartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D97B1FAC82C100DDD222 /* HeartViewController.m */; };
 		01D8D97F1FAC8EAD00DDD222 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 01D8D97E1FAC8EAD00DDD222 /* data */; };
+		01D8D9831FAC9CA100DDD222 /* HeartRateDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9821FAC9CA100DDD222 /* HeartRateDataTests.m */; };
+		01D8D9871FAC9DFE00DDD222 /* HeartRateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9861FAC9DFE00DDD222 /* HeartRateData.m */; };
+		01D8D9881FAC9DFE00DDD222 /* HeartRateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9861FAC9DFE00DDD222 /* HeartRateData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		01D8D97A1FAC82C100DDD222 /* HeartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartViewController.h; sourceTree = "<group>"; };
 		01D8D97B1FAC82C100DDD222 /* HeartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartViewController.m; sourceTree = "<group>"; };
 		01D8D97E1FAC8EAD00DDD222 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		01D8D9821FAC9CA100DDD222 /* HeartRateDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartRateDataTests.m; sourceTree = "<group>"; };
+		01D8D9851FAC9DFE00DDD222 /* HeartRateData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeartRateData.h; sourceTree = "<group>"; };
+		01D8D9861FAC9DFE00DDD222 /* HeartRateData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeartRateData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		01D8D9441FAC79B600DDD222 /* Healthshare */ = {
 			isa = PBXGroup;
 			children = (
+				01D8D9841FAC9DE300DDD222 /* model */,
 				01D8D97E1FAC8EAD00DDD222 /* data */,
 				01D8D9451FAC79B600DDD222 /* AppDelegate.h */,
 				01D8D9461FAC79B600DDD222 /* AppDelegate.m */,
@@ -125,6 +132,7 @@
 		01D8D95D1FAC79B600DDD222 /* HealthshareTests */ = {
 			isa = PBXGroup;
 			children = (
+				01D8D9821FAC9CA100DDD222 /* HeartRateDataTests.m */,
 				01D8D95E1FAC79B600DDD222 /* HealthshareTests.m */,
 				01D8D9601FAC79B600DDD222 /* Info.plist */,
 			);
@@ -138,6 +146,15 @@
 				01D8D96B1FAC79B600DDD222 /* Info.plist */,
 			);
 			path = HealthshareUITests;
+			sourceTree = "<group>";
+		};
+		01D8D9841FAC9DE300DDD222 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				01D8D9851FAC9DFE00DDD222 /* HeartRateData.h */,
+				01D8D9861FAC9DFE00DDD222 /* HeartRateData.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +294,7 @@
 				01D8D94A1FAC79B600DDD222 /* ViewController.m in Sources */,
 				01D8D9551FAC79B600DDD222 /* main.m in Sources */,
 				01D8D9471FAC79B600DDD222 /* AppDelegate.m in Sources */,
+				01D8D9871FAC9DFE00DDD222 /* HeartRateData.m in Sources */,
 				01D8D97C1FAC82C100DDD222 /* HeartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D8D9831FAC9CA100DDD222 /* HeartRateDataTests.m in Sources */,
+				01D8D9881FAC9DFE00DDD222 /* HeartRateData.m in Sources */,
 				01D8D95F1FAC79B600DDD222 /* HealthshareTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
