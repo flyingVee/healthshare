@@ -140,11 +140,11 @@
 		01D8D95D1FAC79B600DDD222 /* HealthshareTests */ = {
 			isa = PBXGroup;
 			children = (
+				01D8D98F1FACBC8000DDD222 /* RequestHeartRateDataSetTests.m */,
 				01D8D9891FACB18200DDD222 /* HeartShareDataSetTests.m */,
 				01D8D9821FAC9CA100DDD222 /* HeartRateDataTests.m */,
 				01D8D95E1FAC79B600DDD222 /* HealthshareTests.m */,
 				01D8D9601FAC79B600DDD222 /* Info.plist */,
-				01D8D98F1FACBC8000DDD222 /* RequestHeartRateDataSetTests.m */,
 			);
 			path = HealthshareTests;
 			sourceTree = "<group>";
