@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01251DEB1FADDABE0078EA6C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01251DEA1FADDABD0078EA6C /* CoreBluetooth.framework */; };
 		01D8D9471FAC79B600DDD222 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9461FAC79B600DDD222 /* AppDelegate.m */; };
 		01D8D94A1FAC79B600DDD222 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9491FAC79B600DDD222 /* ViewController.m */; };
 		01D8D94D1FAC79B600DDD222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D8D94B1FAC79B600DDD222 /* Main.storyboard */; };
@@ -79,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01251DEB1FADDABE0078EA6C /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +249,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
