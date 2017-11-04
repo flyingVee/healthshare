@@ -82,7 +82,7 @@
     }
     else
     {
-        if (currentHeartRate > 72.0)
+        if (currentHeartRate > 72.1)
         {
             currentHeartRate -= 0.01;
         }
