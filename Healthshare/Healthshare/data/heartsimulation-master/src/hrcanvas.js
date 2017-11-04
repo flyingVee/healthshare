@@ -57,7 +57,7 @@ heartSimulation.prototype.heartGeometry = function() {
 	// Animation function
 	function draw(){
 	  // clear the canvas
-	  localthis.context.clearRect(0, 0, 120, 120);
+	  localthis.context.clearRect(0, 0, 0, 0);
 
 	  // Wobble the cube using a sine wave
 	  
