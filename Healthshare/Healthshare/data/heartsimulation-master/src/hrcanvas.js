@@ -1,3 +1,9 @@
+var input = function(hr, activity)
+{
+	window.alert("SUCCESS!");
+}
+
+
 /**
 * Heart Simulation
 *
@@ -18,6 +24,8 @@ var heartSimulation = function() {
 
 
 };
+
+
 
 /**
 * sets base canvas visualisation
@@ -64,8 +72,8 @@ heartSimulation.prototype.heartGeometry = function() {
 	  var time1 = Date.now();
 	  var time2 = Date.now();
 	  time2 = time2 + 90;
-	  
-	  
+
+	  	
 	  var wobbleOne = Math.sin(time1/450)*window.innerHeight/20;
 	  var wobbleTwo = Math.sin(time2/450)*window.innerHeight/20;
 	  
