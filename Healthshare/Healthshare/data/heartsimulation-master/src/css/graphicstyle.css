@@ -4,7 +4,7 @@ html {overflow:-moz-scrollbars-vertical !important;}
 	body {
 		background: #F5F4EF; /*url('../images/bg.png')*/
 		color: #000305;
-		font-size: 14px; 
+		font-size: 14px;
 		font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 		line-height: 1.429;
 		margin: 0;
@@ -13,7 +13,7 @@ html {overflow:-moz-scrollbars-vertical !important;}
 	}
 
 
-	
+
 /* HTML5 tags */
 header, section, footer,
 aside, nav, article, figure {
@@ -41,6 +41,16 @@ aside, nav, article, figure {
 	margin-left:40px;
  }
 
+ form{
+   position:absolute;
+   bottom:0;
+   left:0;
+   right:0;
+   background:#efefef;
+   padding:1em;
+   text-align:center;
+ }
+
 /**
 *
 * context of graphic analysis
@@ -51,7 +61,7 @@ aside, nav, article, figure {
 	margin-left:40px;
 	margin-bottom:10px;
  }
- 
+
  /**
 *
 * stroke selection
@@ -88,7 +98,7 @@ aside, nav, article, figure {
 	text-decoration: none;
 	text-shadow: 0 -1px 0 #000;
 	width: 140px;
-	
+
 }
 
 /**
@@ -107,7 +117,7 @@ aside, nav, article, figure {
 	text-decoration: none;
 	text-shadow: 0 -1px 0 #000;
 	width: 85px;
-		
+
 }
 
 /**
@@ -135,7 +145,7 @@ aside, nav, article, figure {
 	text-decoration: none;
 	text-shadow: 0 -1px 0 #000;
 	width: 85px;
-	margin-left:40px;	
+	margin-left:40px;
 }
 
 /**
@@ -155,5 +165,5 @@ aside, nav, article, figure {
 	text-shadow: 0 -1px 0 #000;
 	width: 140px;
 	margin-left:80px;
-		
+
 }

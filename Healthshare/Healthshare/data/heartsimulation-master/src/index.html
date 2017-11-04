@@ -16,13 +16,10 @@
 $(document).ready(function(){
 
 	var StartselfSpace = new heartSimulation();
-
-
 	$("#startHeart").click(function(e) {
 		e.preventDefault(e);
 
 	});
-
 
 });
 </script>
@@ -34,7 +31,14 @@ $(document).ready(function(){
 		</header>
 	</section>
 
-	<canvas id="canvasOne" class="style" width="1200" height="400"></canvas>
+	<canvas id="canvasOne" class="style" width="1024" height="660"></canvas>
+
+	<form>
+	  <input id="x1" type="range" value="100" min="0" max="500">
+	  <input id="x2" type="range" value="100" min="0" max="500">
+	  <input id="y" type="range" value="100" min="0" max="500">
+	  <input id="color" type="color" value="#ff8d4b">
+	</form>
 
 
 </body>
