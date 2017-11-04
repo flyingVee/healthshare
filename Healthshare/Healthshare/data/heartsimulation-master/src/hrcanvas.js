@@ -50,23 +50,53 @@ heartSimulation.prototype.heartGeometry = function() {
 	var y = document.querySelector('#y');
 	var color = document.querySelector('#color');
 
+	var conx1 = document.querySelector('#conx1');
+	var conx2 = document.querySelector('#conx2');
+	var cony = document.querySelector('#cony');
+
 	// Animation function
 	function draw(){
 	  // clear the canvas
 	  localthis.context.clearRect(0, 0, 120, 120);
 
 	  // Wobble the cube using a sine wave
-	  var wobble = Math.sin(Date.now()/250)*window.innerHeight/50;
-
+	  
+	  var time1 = Date.now();
+	  var time2 = Date.now();
+	  time2 = time2 + 90;
+	  
+	  
+	  var wobbleOne = Math.sin(time1/450)*window.innerHeight/20;
+	  var wobbleTwo = Math.sin(time2/450)*window.innerHeight/20;
+	  
 	  // draw the cube
 	  drawCube(
-	    window.innerWidth/2,
-	    window.innerHeight/2 + wobble + y.value/2 - 150,
+		window.innerWidth/2.3,
+	    window.innerHeight/3 - wobbleTwo + y.value/1,
 	    Number(x1.value),
 	    Number(x2.value),
 	    Number(y.value),
 	    color.value
 	  );
+
+	  drawCube(
+	    window.innerWidth/3,
+	    window.innerHeight/2.6 + y.value/2,
+	    Number(conx1.value),
+	    Number(conx2.value),
+	    Number(cony.value),
+	    color.value
+	  );
+	  
+	  drawCube(
+	    window.innerWidth/3.5,
+	    window.innerHeight/2.1 + wobbleOne + y.value/2,
+	    Number(x1.value),
+	    Number(x2.value),
+	    Number(y.value),
+	    color.value
+	  );
+
 
 	  requestAnimationFrame(draw);
 	}
@@ -103,7 +133,7 @@ heartSimulation.prototype.heartGeometry = function() {
 	    localthis.context.lineTo(x + wy, y - h - wy * 0.5);
 	    localthis.context.lineTo(x, y - h * 1);
 	    localthis.context.closePath();
-	    localthis.context.fillStyle = shadeColor(color, 10);
+	    localthis.context.fillStyle = shadeColor(color, -10);
 	    localthis.context.strokeStyle = shadeColor(color, 50);
 	    localthis.context.stroke();
 	    localthis.context.fill();
@@ -115,7 +145,7 @@ heartSimulation.prototype.heartGeometry = function() {
 	    localthis.context.lineTo(x + wy, y - h - wy * 0.5);
 	    localthis.context.closePath();
 	    localthis.context.fillStyle = shadeColor(color, 20);
-	    localthis.context.strokeStyle = shadeColor(color, 60);
+	    localthis.context.strokeStyle = shadeColor(color, 150);
 	    localthis.context.stroke();
 	    localthis.context.fill();
 	  }
