@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01251DED1FAE0E4B0078EA6C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01251DEC1FAE0E4B0078EA6C /* CoreMotion.framework */; };
 		01D8D9471FAC79B600DDD222 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9461FAC79B600DDD222 /* AppDelegate.m */; };
 		01D8D94A1FAC79B600DDD222 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D8D9491FAC79B600DDD222 /* ViewController.m */; };
 		01D8D94D1FAC79B600DDD222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D8D94B1FAC79B600DDD222 /* Main.storyboard */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01251DEA1FADDABD0078EA6C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		01251DEC1FAE0E4B0078EA6C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		01D8D9421FAC79B600DDD222 /* Healthshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Healthshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D8D9451FAC79B600DDD222 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01D8D9461FAC79B600DDD222 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01251DED1FAE0E4B0078EA6C /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01251DE91FADDABD0078EA6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01251DEC1FAE0E4B0078EA6C /* CoreMotion.framework */,
+				01251DEA1FADDABD0078EA6C /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		01D8D9391FAC79B600DDD222 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +117,7 @@
 				01D8D95D1FAC79B600DDD222 /* HealthshareTests */,
 				01D8D9681FAC79B600DDD222 /* HealthshareUITests */,
 				01D8D9431FAC79B600DDD222 /* Products */,
+				01251DE91FADDABD0078EA6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +138,8 @@
 				01D8D97E1FAC8EAD00DDD222 /* data */,
 				01D8D9451FAC79B600DDD222 /* AppDelegate.h */,
 				01D8D9461FAC79B600DDD222 /* AppDelegate.m */,
+				01D8D97A1FAC82C100DDD222 /* HeartViewController.h */,
+				01D8D97B1FAC82C100DDD222 /* HeartViewController.m */,
 				01D8D9481FAC79B600DDD222 /* ViewController.h */,
 				01D8D9491FAC79B600DDD222 /* ViewController.m */,
 				01D8D94B1FAC79B600DDD222 /* Main.storyboard */,
@@ -131,8 +147,6 @@
 				01D8D9501FAC79B600DDD222 /* LaunchScreen.storyboard */,
 				01D8D9531FAC79B600DDD222 /* Info.plist */,
 				01D8D9541FAC79B600DDD222 /* main.m */,
-				01D8D97A1FAC82C100DDD222 /* HeartViewController.h */,
-				01D8D97B1FAC82C100DDD222 /* HeartViewController.m */,
 			);
 			path = Healthshare;
 			sourceTree = "<group>";
@@ -237,6 +251,11 @@
 					01D8D9411FAC79B600DDD222 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					01D8D9591FAC79B600DDD222 = {
 						CreatedOnToolsVersion = 9.0;
