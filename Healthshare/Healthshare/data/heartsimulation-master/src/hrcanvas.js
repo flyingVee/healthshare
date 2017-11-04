@@ -1,6 +1,6 @@
 var input = function(hr, activity)
 {
-	window.alert("SUCCESS!");
+	
 }
 
 
