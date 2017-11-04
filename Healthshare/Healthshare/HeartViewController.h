@@ -12,6 +12,7 @@
 @interface HeartViewController : UIViewController
 {
     NSMutableArray* activityArray;
+    double currentHeartRate;
 }
 @property (weak, nonatomic) IBOutlet UIWebView* webView;
 @property (strong, nonatomic) CMMotionManager* motionManager;
