@@ -40,7 +40,7 @@ $(document).ready(function(){
 	  <input id="y" type="range" value="10" min="0" max="500">
 	  <input id="color" type="color" value="#cc0000">
 	</form>
-	
+
 	<form >
 	  <input id="conx1" type="range" value="10" min="0" max="100">
 	  <input id="conx2" type="range" value="80" min="0" max="100">
@@ -48,9 +48,17 @@ $(document).ready(function(){
 	  <input id="color" type="color" value="#cc0000">
 	</form>
 
-<!-- Rob test code -->
-<div id="chartContainer" style="height: 150px; width:100%; position: absolute; bottom: 0; left: 0;"></div>
-<!-- END Rob test code -->
+
+<div id="chartContainer" style="height: 150px; width:724px; position: absolute; bottom: 0; left: 0;"></div>
+<div id="actualHR" style="height: 150px; width: 150px; position: absolute; bottom: 0; left: 724px;">
+	<div class='title'>Actual HR rate</div>
+	<div class='value'></div>
+</div>
+<div id="predictedHR" style="height: 150px; width: 150px; position: absolute; bottom: 0; left: 874px;">
+	<div class='title'>Predicted HR rate</div>
+	<div class='value'></div>
+</div>
+
 
 
 </body>

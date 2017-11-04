@@ -1,7 +1,14 @@
 var input = function(hr, activity)
 {
-	
+	simulateInputs = false;
+	currentHr = hr;
+	currentActivity = activity;
 }
+
+var simulateInputs = true;
+var currentHr = 0;
+var predictedHR = 0;
+var currentActivity = 0;
 
 
 /**
@@ -68,15 +75,15 @@ heartSimulation.prototype.heartGeometry = function() {
 	  localthis.context.clearRect(0, 0, 0, 0);
 
 	  // Wobble the cube using a sine wave
-	  
+
 	  var time1 = Date.now();
 	  var time2 = Date.now();
 	  time2 = time2 + 90;
 
-	  	
+
 	  var wobbleOne = Math.sin(time1/450)*window.innerHeight/20;
 	  var wobbleTwo = Math.sin(time2/450)*window.innerHeight/20;
-	  
+
 	  // draw the cube
 	  drawCube(
 		window.innerWidth/2.3,
@@ -95,7 +102,7 @@ heartSimulation.prototype.heartGeometry = function() {
 	    Number(cony.value),
 	    color.value
 	  );
-	  
+
 	  drawCube(
 	    window.innerWidth/3.5,
 	    window.innerHeight/2.1 + wobbleOne + y.value/2,
@@ -196,40 +203,53 @@ heartSimulation.prototype.drawchart = function () {
 		data: [{
 			type: "line",
 			name: "Actual",
+			markerType: "none",
+			lineThickness: 5,
+			lineColor: "green",
+			showInLegend: true,
 			dataPoints: actualDps
 		},
 		{
 			type: "line",
 			name: "Simulated",
+			markerType: "none",
+			lineThickness: 5,
+			lineColor: "red",
+			showInLegend: true,
 			dataPoints: simulatedDps
 		}]
 	});
 
-	var xVal = 0;
+	var xVal1 = 0;
+	var xVal2 = 0;
 	var yVal = 100;
 	var updateInterval = 1000;
-	var dataLength = 20; // number of dataPoints visible at any point
+	var dataLength = 1000; // number of dataPoints visible at any point
 
 	var updateChart = function (count) {
 
 		count = count || 1;
 
 		for (var j = 0; j < count; j++) {
-			yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+			if(simulateInputs) {
+				currentHr = currentHr +  Math.round(Math.random() *(5) - 2.5);
+			}
 			actualDps.push({
-				x: xVal,
-				y: yVal
+				x: xVal1,
+				y: currentHr
 			});
-			xVal++;
+			xVal1++;
 		}
 
 		for (var j = 0; j < count; j++) {
-			yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+			if(simulateInputs) {
+				predictedHR = predictedHR +  Math.round(Math.random() *(5) - 2.5);
+			}
 			simulatedDps.push({
-				x: xVal,
-				y: yVal
+				x: xVal2,
+				y: predictedHR
 			});
-			xVal++;
+			xVal2++;
 		}
 
 		if (actualDps.length > dataLength) {
@@ -243,7 +263,7 @@ heartSimulation.prototype.drawchart = function () {
 		chart.render();
 	};
 
-	updateChart(dataLength);
+	updateChart(1);
 	setInterval(function(){updateChart()}, updateInterval);
 
 };
