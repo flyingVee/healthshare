@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    activityArray = [[NSMutableArray alloc] initWithCapacity:10];
+    
     self.webView.scrollView.bounces = NO;
     
     NSURLRequest* localHtml = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"data/heartsimulation-master/src/index" ofType:@"html"]isDirectory:NO]];
@@ -52,8 +54,21 @@
     double activityZ = fabs(userAcceleration.z);
     
     double activity = (activityX + activityY + activityZ) / 3.0;
+    [activityArray addObject:[NSNumber numberWithDouble:activity]];
     
-    NSLog(@"Activity: %f", activity);
+    if (activityArray.count == 10)
+    {
+        double activityOverTenUpdates = 0.0;
+        for (NSNumber* x in activityArray)
+        {
+            activityOverTenUpdates += x.doubleValue;
+        }
+        [activityArray removeAllObjects];
+        
+        NSLog(@"activityOverTenUpdates: %f", activityOverTenUpdates);
+    }
+    
+    
 }
 
 @end

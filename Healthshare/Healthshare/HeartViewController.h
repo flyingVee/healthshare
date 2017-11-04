@@ -10,7 +10,9 @@
 #import <CoreMotion/CoreMotion.h>
 
 @interface HeartViewController : UIViewController
-
+{
+    NSMutableArray* activityArray;
+}
 @property (weak, nonatomic) IBOutlet UIWebView* webView;
 @property (strong, nonatomic) CMMotionManager* motionManager;
 
