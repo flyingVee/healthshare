@@ -69,7 +69,9 @@
         NSLog(@"activityOverTenUpdates: %f", activityOverTenUpdates);
         [self adjustCurrentHeartRateBasedOnActivity: activityOverTenUpdates];
         NSLog(@"currentHeartRate: %d", (int)currentHeartRate);
-        // TODO: send activityOverTenUpdates and currentHeartRate to JS
+        
+        NSString* function = [[NSString alloc] initWithFormat: @"input(%d, %f)", (int)currentHeartRate, activityOverTenUpdates];
+        [self.webView stringByEvaluatingJavaScriptFromString:function];
     }
 }
 
