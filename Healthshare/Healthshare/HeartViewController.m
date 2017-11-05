@@ -41,6 +41,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self.motionManager stopDeviceMotionUpdates];
+    [self.webView stopLoading];
     [super viewWillDisappear:animated];
 }
 
@@ -66,9 +67,9 @@
         }
         [activityArray removeAllObjects];
         
-        NSLog(@"activityOverTenUpdates: %f", activityOverTenUpdates);
+        //NSLog(@"activityOverTenUpdates: %f", activityOverTenUpdates);
         [self adjustCurrentHeartRateBasedOnActivity: activityOverTenUpdates];
-        NSLog(@"currentHeartRate: %d", (int)currentHeartRate);
+        //NSLog(@"currentHeartRate: %d", (int)currentHeartRate);
         
         NSString* function = [[NSString alloc] initWithFormat: @"input(%d, %f)", (int)currentHeartRate, activityOverTenUpdates];
         [self.webView stringByEvaluatingJavaScriptFromString:function];
