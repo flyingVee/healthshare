@@ -84,13 +84,26 @@ heartSimulation.prototype.heartGeometry = function() {
 	  time2 = time2 + 90;
 
 
-	  var wobbleOne = Math.sin(time1/450)*window.innerHeight/20;
-	  var wobbleTwo = Math.sin(time2/450)*window.innerHeight/20;
+	  var wobbleOne = Math.sin(time1/150)
+	  var wobbleTwo = Math.sin(time2/150)
+	  
+	  if (wobbleOne < -1 ) {
+		  wobbleOne = -1;
+	  }
+	  
+	  if (wobbleOne > 0) {
+		  wobbleOne = 0;
+	  }
+	  
+	  var wHeightOne = wobbleOne * window.innerHeight/15;
+	  var wHeightTwo = wobbleTwo * window.innerHeight/20;
+	  
+
 
 	  // draw the cube
 	  drawCube(
 		window.innerWidth/2.3 - 100,
-	    window.innerHeight/3 - wobbleTwo + y.value/1 -50,
+	    window.innerHeight/3 - wHeightTwo + y.value/1 -50,
 	    Number(x1.value),
 	    Number(x2.value),
 	    Number(y.value),
@@ -108,7 +121,7 @@ heartSimulation.prototype.heartGeometry = function() {
 
 	  drawCube(
 	    window.innerWidth/3.5 - 100,
-	    window.innerHeight/2.1 + wobbleOne + y.value/2 - 50,
+	    window.innerHeight/2 + wHeightOne + y.value/2 - 50,
 	    Number(x1.value),
 	    Number(x2.value),
 	    Number(y.value),
