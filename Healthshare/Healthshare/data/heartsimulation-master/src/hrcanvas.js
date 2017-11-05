@@ -11,6 +11,7 @@ var predictedHR = 0;
 var currentActivity = 0;
 
 
+
 /**
 * Heart Simulation
 *
@@ -26,6 +27,7 @@ var heartSimulation = function() {
 
 	this.context = {};
 	this.selfSpace = document.getElementById("canvasOne");
+	this.actualHRDisplay = document.getElementById("actualHRvalue");
 	this.drawchart();
 	this.startCanvasSpace();
 
@@ -42,10 +44,10 @@ var heartSimulation = function() {
 heartSimulation.prototype.startCanvasSpace = function() {
 //	theCanvas = this.status.canvasPlace;
 	this.context = this.selfSpace.getContext("2d");
-	this.context.fillStyle = '#EEEEEE';
+	this.context.fillStyle = '#f4cccc';
 	this.context.fillRect(0, 0, this.selfSpace.width, this.selfSpace.height);
 	this.context.strokeStyle = '#000000';
-	this.context.strokeRect(1,  1, this.selfSpace.width-2, this.selfSpace.height-2);
+	this.context.strokeRect(0,  0, this.selfSpace.width-2, this.selfSpace.height-2);
 	this.context.width = window.innerWidth;
 	this.context.height = window.innerHeight;
 	this.heartGeometry();
@@ -195,27 +197,28 @@ heartSimulation.prototype.drawchart = function () {
 
 	var chart = new CanvasJS.Chart("chartContainer", {
 		title :{
-			text: "Model Prediction vs Actual Data"
+			//text: "Model Prediction vs Actual Data"
 		},
+		theme: "light2",
 		axisY: {
 			includeZero: false
 		},
 		data: [{
-			type: "line",
+			type: "spline",
 			name: "Actual",
 			markerType: "none",
 			lineThickness: 5,
 			lineColor: "green",
-			showInLegend: true,
+			//showInLegend: true,
 			dataPoints: actualDps
 		},
 		{
-			type: "line",
+			type: "spline",
 			name: "Simulated",
 			markerType: "none",
 			lineThickness: 5,
 			lineColor: "red",
-			showInLegend: true,
+			//showInLegend: true,
 			dataPoints: simulatedDps
 		}]
 	});
@@ -234,6 +237,9 @@ heartSimulation.prototype.drawchart = function () {
 			if(simulateInputs) {
 				currentHr = currentHr +  Math.round(Math.random() *(5) - 2.5);
 			}
+
+			document.getElementById("actualHRvalue").innerHTML = currentHr;
+
 			actualDps.push({
 				x: xVal1,
 				y: currentHr
@@ -245,6 +251,9 @@ heartSimulation.prototype.drawchart = function () {
 			if(simulateInputs) {
 				predictedHR = predictedHR +  Math.round(Math.random() *(5) - 2.5);
 			}
+
+			document.getElementById("predictedHRvalue").innerHTML = predictedHR;
+
 			simulatedDps.push({
 				x: xVal2,
 				y: predictedHR

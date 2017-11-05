@@ -2,7 +2,7 @@ html {overflow:-moz-scrollbars-vertical !important;}
 
 /* Body */
 	body {
-		background: #F5F4EF; /*url('../images/bg.png')*/
+		background: url('../images/background.png'); /*url('../images/bg.png')*/
 		color: #000305;
 		font-size: 14px;
 		font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -11,7 +11,7 @@ html {overflow:-moz-scrollbars-vertical !important;}
 		padding: 0;
 		text-align: center;
 	}
-	
+
 
 /* HTML5 tags */
 header, section, footer,
