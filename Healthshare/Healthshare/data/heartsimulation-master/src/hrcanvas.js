@@ -46,7 +46,7 @@ heartSimulation.prototype.startCanvasSpace = function() {
 	this.context = this.selfSpace.getContext("2d");
 	this.context.fillStyle = '#f4cccc';
 	this.context.fillRect(0, 0, this.selfSpace.width, this.selfSpace.height);
-	this.context.strokeStyle = '#000000';
+	this.context.strokeStyle = '#f4cccc';
 	this.context.strokeRect(0,  0, this.selfSpace.width-2, this.selfSpace.height-2);
 	this.context.width = window.innerWidth;
 	this.context.height = window.innerHeight;
@@ -88,8 +88,8 @@ heartSimulation.prototype.heartGeometry = function() {
 
 	  // draw the cube
 	  drawCube(
-		window.innerWidth/2.3,
-	    window.innerHeight/3 - wobbleTwo + y.value/1,
+		window.innerWidth/2.3 - 100,
+	    window.innerHeight/3 - wobbleTwo + y.value/1 -50,
 	    Number(x1.value),
 	    Number(x2.value),
 	    Number(y.value),
@@ -97,8 +97,8 @@ heartSimulation.prototype.heartGeometry = function() {
 	  );
 
 	  drawCube(
-	    window.innerWidth/3,
-	    window.innerHeight/2.6 + y.value/2,
+	    window.innerWidth/3 - 100,
+	    window.innerHeight/2.6 + y.value/2 - 50,
 	    Number(conx1.value),
 	    Number(conx2.value),
 	    Number(cony.value),
@@ -106,8 +106,8 @@ heartSimulation.prototype.heartGeometry = function() {
 	  );
 
 	  drawCube(
-	    window.innerWidth/3.5,
-	    window.innerHeight/2.1 + wobbleOne + y.value/2,
+	    window.innerWidth/3.5 - 100,
+	    window.innerHeight/2.1 + wobbleOne + y.value/2 - 50,
 	    Number(x1.value),
 	    Number(x2.value),
 	    Number(y.value),
@@ -239,6 +239,8 @@ heartSimulation.prototype.drawchart = function () {
 			}
 
 			document.getElementById("actualHRvalue").innerHTML = currentHr;
+			document.getElementById("actualActivity").style.height = Math.floor((30 - currentActivity) * 7.3 ) + "px" ;
+			//document.getElementById("actualActivity").style.height = "25px";
 
 			actualDps.push({
 				x: xVal1,
@@ -250,7 +252,14 @@ heartSimulation.prototype.drawchart = function () {
 		for (var j = 0; j < count; j++) {
 			if(simulateInputs) {
 				predictedHR = predictedHR +  Math.round(Math.random() *(5) - 2.5);
+			} else {
+				if(currentActivity <= 5) {
+					predictedHR = 54;
+				} else {
+					predictedHR = 80;
+				}
 			}
+
 
 			document.getElementById("predictedHRvalue").innerHTML = predictedHR;
 
