@@ -253,7 +253,7 @@ heartSimulation.prototype.drawchart = function () {
 			if(simulateInputs) {
 				predictedHR = predictedHR +  Math.round(Math.random() *(5) - 2.5);
 			} else {
-				if(currentActivity > 5) {
+				if(currentActivity <= 5) {
 					predictedHR = 54;
 				} else {
 					predictedHR = 80;
