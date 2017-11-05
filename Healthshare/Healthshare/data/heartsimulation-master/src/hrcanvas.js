@@ -239,6 +239,8 @@ heartSimulation.prototype.drawchart = function () {
 			}
 
 			document.getElementById("actualHRvalue").innerHTML = currentHr;
+			document.getElementById("actualActivity").style.height = Math.floor((30 - currentActivity) * 7.3 ) + "px" ;
+			//document.getElementById("actualActivity").style.height = "25px";
 
 			actualDps.push({
 				x: xVal1,
@@ -250,7 +252,14 @@ heartSimulation.prototype.drawchart = function () {
 		for (var j = 0; j < count; j++) {
 			if(simulateInputs) {
 				predictedHR = predictedHR +  Math.round(Math.random() *(5) - 2.5);
+			} else {
+				if(currentActivity > 5) {
+					predictedHR = 54;
+				} else {
+					predictedHR = 80;
+				}
 			}
+
 
 			document.getElementById("predictedHRvalue").innerHTML = predictedHR;
 
