@@ -36,7 +36,17 @@ heartShare.prototype.inWork = function() {
 };
 
 /**
-*  equation of pump fluid dynamics
+*  equation of fluid dynamics
+* @method thePump
+*
+*/
+heartShare.prototype.fludiDynamics = function() {
+  // velocity and direction
+
+};
+
+/**
+*  equation of pump
 * @method thePump
 *
 */
