@@ -8,7 +8,8 @@ var input = function(hr, activity)
 var simulateInputs = true;
 var currentHr = 0;
 var predictedHR = 0;
-var currentActivity = 0;
+var currentActivity = 50;
+var heartModelSpeed = 1;
 
 
 
@@ -78,8 +79,8 @@ heartSimulation.prototype.heartGeometry = function() {
 
 	  // Wobble the cube using a sine wave
 
-	  var time1 = Date.now();
-	  var time2 = Date.now();
+	  var time1 = Date.now() * heartModelSpeed;
+	  var time2 = Date.now() * heartModelSpeed;
 	  time2 = time2 + 90;
 
 
@@ -191,6 +192,8 @@ heartSimulation.prototype.drawchart = function () {
 
 	var actualDps = []; // dataPoints
 	var simulatedDps = []; // dataPoints
+	var activityDps = []; // dataPoints
+
 	//var mydata = JSON.parse(this.getdata());
 
 	//mydata.actual[1];
@@ -203,21 +206,34 @@ heartSimulation.prototype.drawchart = function () {
 		axisY: {
 			includeZero: false
 		},
-		data: [{
+		data: [
+			{
+				type: "area",
+				name: "Activity",
+				markerType: "none",
+				lineThickness: 0,
+				color: "#fff2cc",
+				//showInLegend: true,
+				dataPoints: activityDps
+			},
+			{
 			type: "spline",
 			name: "Actual",
 			markerType: "none",
 			lineThickness: 5,
 			lineColor: "green",
+			axisYType: "secondary",
 			//showInLegend: true,
 			dataPoints: actualDps
 		},
+
 		{
 			type: "spline",
 			name: "Simulated",
 			markerType: "none",
 			lineThickness: 5,
 			lineColor: "red",
+			axisYType: "secondary",
 			//showInLegend: true,
 			dataPoints: simulatedDps
 		}]
@@ -246,6 +262,11 @@ heartSimulation.prototype.drawchart = function () {
 				x: xVal1,
 				y: currentHr
 			});
+
+			activityDps.push({
+				x: xVal1,
+				y: currentActivity
+			});
 			xVal1++;
 		}
 
@@ -255,8 +276,10 @@ heartSimulation.prototype.drawchart = function () {
 			} else {
 				if(currentActivity <= 5) {
 					predictedHR = 54;
+					heartModelSpeed = 1;
 				} else {
-					predictedHR = 80;
+					predictedHR = 108;
+					heartModelSpeed = 1.5;
 				}
 			}
 
@@ -273,6 +296,11 @@ heartSimulation.prototype.drawchart = function () {
 		if (actualDps.length > dataLength) {
 			actualDps.shift();
 		}
+
+		if (activityDps.length > dataLength) {
+			actualDps.shift();
+		}
+
 
 		if (simulatedDps.length > dataLength) {
 			simulatedDps.shift();
