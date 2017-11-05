@@ -26,12 +26,43 @@ console.log('SIMULATED HEART PUMPING')
 util.inherits(heartShare, events.EventEmitter);
 
 /**
-*  settings of amiigo wristband mode, record record frequency etc.
+*  work demand ask of heart to serve
+* @method inWork
+*
+*/
+heartShare.prototype.inWork = function() {
+
+
+};
+
+/**
+*  equation of pump fluid dynamics
 * @method thePump
 *
 */
 heartShare.prototype.thePump = function() {
+  // input volume x y z geometry assumptions
 
+};
+
+/**
+*  Nerves Simulation
+* @method electricNerves
+*
+*/
+heartShare.prototype.electricNerves = function() {
+  // the frequency and voltage of the pump
+  // eventually how communication transmit across geometry of the heartShare
+
+};
+
+/**
+*
+* @method outputFlow
+*
+*/
+heartShare.prototype.outputFlow = function() {
+  // the exit velocity of blood, poperties of the viscosity of stuff in it.
 
 };
 
