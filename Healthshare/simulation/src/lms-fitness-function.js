@@ -16,9 +16,9 @@ var fs = require('fs');
 var ss = require('simple-statistics');
 
 var Fitness = function() {
-
+console.log('ready to check fitness of model')
 	events.EventEmitter.call(this);
-
+  this.ss = ss;
 
 };
 
@@ -33,10 +33,10 @@ util.inherits(Fitness, events.EventEmitter);
 * @method startLMS
 *
 */
-Fitness.prototype.startLMS = function() {
-
-
+Fitness.prototype.startLMS = function(inSolution) {
+//console.log(inSolution);
+  return Math.pow(inSolution.a,4)+ (inSolution.b * 10) + inSolution.c
 };
 
 
-module.exports = simSensorBMP;
+module.exports = Fitness;

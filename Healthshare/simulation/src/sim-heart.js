@@ -15,7 +15,7 @@ var fs = require('fs');
 var heartShare = function() {
 console.log('SIMULATED HEART PUMPING')
 	events.EventEmitter.call(this);
-
+	this.volumeHeart = 0;
 
 };
 
@@ -36,8 +36,21 @@ heartShare.prototype.inWork = function() {
 };
 
 /**
+*  volume of heart
+* @method heartVolume
+*
+*/
+heartShare.prototype.heartVolume = function(inX, inY, inZ) {
+  // input volume x y z geometry assumptions
+	var volume = inX * inY * inZ;
+	this.volumeHeart = volume;
+console.log('volume of heart ' + volume);
+};
+
+
+/**
 *  equation of fluid dynamics
-* @method thePump
+* @method fludiDynamics
 *
 */
 heartShare.prototype.fludiDynamics = function() {
@@ -51,7 +64,9 @@ heartShare.prototype.fludiDynamics = function() {
 *
 */
 heartShare.prototype.thePump = function() {
-  // input volume x y z geometry assumptions
+	// how much volume can 'push' on
+	var pushRate = 3;
+	var rateFill = 0.02;  // per second
 
 };
 
@@ -62,7 +77,7 @@ heartShare.prototype.thePump = function() {
 */
 heartShare.prototype.electricNerves = function() {
   // the frequency and voltage of the pump
-  // eventually how communication transmit across geometry of the heartShare
+  // eventually how communication transmit across geometry of the heart
 
 };
 
