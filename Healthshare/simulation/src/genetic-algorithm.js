@@ -1,5 +1,8 @@
 var Task = require('genetic').Task;
 var util = require('util');
+const Fitness = require('./lms-fitness-function.js');
+
+var liveFitness = new Fitness();
 
   var options = { getRandomSolution : getRandomSolution
               , popSize : 500
@@ -11,7 +14,7 @@ var util = require('util');
               , crossoverProbability : 0.3
               , crossover : crossover
               }
-console.log(options);
+//console.log(options);
 
 function crossover(parent1, parent2, callback) {
   var child = {}
@@ -21,6 +24,18 @@ function crossover(parent1, parent2, callback) {
   else {
     child.a = parent2.a
   }
+  if (Math.random()>0.5) {
+    child.b = parent1.b
+  }
+  else {
+    child.b = parent2.b
+  }
+  if (Math.random()>0.5) {
+    child.c = parent1.c
+  }
+  else {
+    child.c = parent2.c
+  }
   callback(child)
 }
 
@@ -28,16 +43,18 @@ function mutate(solution, callback) {
   if (Math.random()<0.3) {
     solution.a = Math.random()
   }
+  if (Math.random()<0.3) {
+    solution.b = Math.random()
+  }
+  if (Math.random()<0.3) {
+    solution.c = Math.random()
+  }
   callback(solution)
 }
 
 function getRandomSolution(callback) {
-
-  var simBPM = [75,76,89,90,99,69,68];  //should be time i.e pairs
-  var wearableBPM = [80,82,93,102,120,122,72];
-
-  var solution = { a: Math.random() }
-console.log(solution);
+  var solution = { a: Math.random(), b: Math.random(), c: Math.random() }
+//console.log(solution);
   callback(solution)
 }
 
@@ -46,9 +63,7 @@ function stopCriteria() {
 }
 
 function fitness(solution, callback) {
-  // min differences between beats simulation and actual
-  // old Math.pow(solution.a,2)+solution.b+solution.c
-  callback('least means squares FUNCTIONS(with callback)')
+  callback(liveFitness.startLMS(solution))
 }
 
 console.log('=== TEST BEGINS === ')
@@ -86,4 +101,4 @@ var
  //t.on('reproduction end', function (children) { console.log('reproduction end',children) })
 //
 t.on('error', function (error) { console.log('ERROR - ', error) })
-t.run(function (stats) { console.log('results', stats)})
+t.run(function (stats) {console.log('results', stats)})
