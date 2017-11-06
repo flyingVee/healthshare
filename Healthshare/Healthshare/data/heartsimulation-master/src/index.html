@@ -33,7 +33,7 @@ $(document).ready(function(){
 	</section>
 
 
- <div style="position:relative; width: 1024px; height: 660px;">
+ <div id="outerFrame" >
 	<canvas id="canvasOne" class="style" width="524" height="360" style="position: absolute; bottom:80px; right:50px"></canvas>
 
 	<form >
@@ -51,17 +51,16 @@ $(document).ready(function(){
 	</form>
 
 
-<div id="chartContainer" style="height: 150px; width:600px; position: absolute; top: 100px; right: 0;"></div>
-<div id="actualHR" style="height: 150px; width: 150px; position: absolute; top: 110px; left: 260px;">
+<div id="chartContainer" ></div>
+<div id="actualHR" >
 
-	<div id="actualHRvalue" class='value' style="font-size: 60px; color: #d9ead3;text-align: center;"></div>
+	<div id="actualHRvalue" class='value' ></div>
 </div>
-<div id="predictedHR" style="height: 150px; width: 150px; position: absolute; top: 320px; left: 260px;">
+<div id="predictedHR" >
 
-	<div id="predictedHRvalue" class='value' style="font-size: 60px; color: #f4cccc; text-align: center";></div>
+	<div id="predictedHRvalue" class='value' ></div>
 </div>
-<div id="actualActivity"
-style="width:95px; height:110px; display: block; position: absolute; top: 110px; left: 0; background-color: white;"></div>
+<div id="actualActivity"/>
 
 </div>
 
